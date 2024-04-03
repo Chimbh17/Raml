@@ -1,0 +1,33 @@
+#%RAML 1.0 Library
+usage: Library of datatypes
+types:
+  student-datatype:
+    type: object
+    properties:
+      studentName: string
+      studentID: integer
+      studentAddress: string
+      studentPhone: string
+      studentActive: string
+      studentYear: string
+      studentSemester: integer
+    examples:
+      example1: !include Examples/student-datatype.json
+      example2: !include Examples/student-datatype.raml
+        
+  error-datatype:
+    type: object
+    properties:
+      status: string
+      errorCode: integer
+      errorDescription: string
+    example: !include Examples/error-datatype.raml
+      
+
+  success-datatype:
+    type: object
+    properties:
+      status: string
+      code: integer
+    example: !include Examples/success-datatype.raml
+

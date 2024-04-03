@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+<flow name="insertStudentInformation-flow" doc:id="b321c4e0-702f-4d6d-94fe-5972f8fe9dd7" >
+<logger level="INFO" doc:name="Logger" doc:id="8a3e2792-ac11-4675-9d18-0a539b93063a" />
+<ee:transform doc:name="Transform Message" doc:id="ceccba1c-d369-4e03-a96c-5643392b1901" >
+<ee:message >
+<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+studentname: "student1",
+studentid: 101,
+studentaddress: "addr1",
+studentphone: "1234567899",
+studentactive: "A",
+studentyear: 2013,
+studentsemester: 6
+}]]></ee:set-payload>
+</ee:message>
+</ee:transform>
+<logger level="INFO" doc:name="Logger" doc:id="5f15d158-dd20-4191-adea-58e7ce9c378c" />
+</flow>
+<flow name="updateStudentInformation-flow" doc:id="7cca32b6-b9cc-48a9-90ed-9a518a755a6c" >
+<logger level="INFO" doc:name="Logger" doc:id="2aedc249-e823-4328-bba1-556008edf8c1" />
+<ee:transform doc:name="Transform Message" doc:id="8ab63626-24af-4dac-8544-db35d2e10472" >
+<ee:message >
+<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+studentname: "student1",
+studentid: 101,
+studentaddress: "addr1",
+studentphone: "1234567899",
+studentactive: "A",
+studentyear: 2013,
+studentsemester: 6
+}]]></ee:set-payload>
+</ee:message>
+</ee:transform>
+<logger level="INFO" doc:name="Logger" doc:id="8c23b185-b861-4cf1-a32b-3bd9a7d3c723" />
+</flow>
+</mule>

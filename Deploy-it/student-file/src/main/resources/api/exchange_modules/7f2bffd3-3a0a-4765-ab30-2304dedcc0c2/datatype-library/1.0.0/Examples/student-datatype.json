@@ -1,0 +1,9 @@
+{
+"studentName": "name1",
+"studentID": 11 ,
+"studentAddress": "addr1",
+"studentPhone": "412425",
+"studentActive": "A",
+"studentYear": "2024",
+"studentSemester": 8
+}

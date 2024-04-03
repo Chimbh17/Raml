@@ -1,0 +1,7 @@
+#%RAML 1.0 ResourceType
+get?:
+  is:
+    - success-response-trait: {successCode: 200}
+    - error-response-trait: {errorCode: 400}
+    - error-response-trait: {errorCode: 500}
+    

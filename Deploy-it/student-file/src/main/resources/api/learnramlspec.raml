@@ -1,0 +1,46 @@
+#%RAML 1.0
+title: learnRamlSpec
+baseUri: http://localhost:8081/studentapi
+version: 1.0.0
+mediaType: 
+- application/json
+
+uses:
+  datatype-library: /exchange_modules/7f2bffd3-3a0a-4765-ab30-2304dedcc0c2/datatype-library/1.0.0/datatype-library.raml
+
+traits:
+  error-response-trait: !include /traits/error-response-trait.raml
+  success-response-trait: !include /traits/success-response-trait.raml
+  
+resourceTypes:
+  get-student-details: !include /resourceType/get-student-details.raml
+  update-student-details: !include /resourceType/update-student-details.raml
+
+
+/createStudentInformation:
+  displayName: create student Details
+  description: The method created for student registration information
+  type: update-student-details
+  post:
+  put:
+  
+/retrieveStudentInformation:
+  displayName: Retrieve student information
+  description: The methode is used for retrieve student information from the database
+  type: get-student-details
+  get:
+    queryParameters:
+      studentID:
+        displayName: StudentID
+        type:  string
+        required: true
+      
+
+/deleteStudentInformation:
+  displayName: Delete Student information
+  description: Delete student information
+  /{uriParameter}:
+    type: get-student-details
+    get:
+
+   
